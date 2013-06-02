@@ -63,9 +63,9 @@ while(i > 5) {
     vertices[--i] = {x: x, y: y};
 }
 
-console.time("triangulate");
+//console.time("triangulate");
 var triangles = triangulate(vertices);
-console.timeEnd("triangulate");
+//console.timeEnd("triangulate");
 
 i = triangles.length;
 while(i)
