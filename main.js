@@ -48,8 +48,6 @@ var r2 = triangleSize2/(2 * Math.cos(Math.PI/6));
 //paper.circle(tx2, ty2, r2);
 
 var distance1, distance2;
-
-
 while(i > 5) {
 
     do{
