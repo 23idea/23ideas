@@ -71,9 +71,36 @@ i = triangles.length;
 while(i)
     triangles[--i].drawRaleaph(paper);
 
+/* jquery plugin */
+$.fn.teletype = function(opts){
+    var $this = this,
+        defaults = {
+            animDelay: 50
+        },
+        settings = $.extend(defaults, opts);
+
+    $.each(settings.text.split(''), function(i, letter){
+        setTimeout(function(){
+            $this.html($this.html() + letter);
+        }, settings.animDelay * i);
+    });
+};
+
 $(document).ready(function(){
-    $("#twentyThree").css("top", ty2 - 20 + "px")
-    $("#twentyThree").css("left", tx2 - 20 + "px")
-    $("#ideas").css("top", ty1 - 40 + "px")
-    $("#ideas").css("left", tx1 - 110 + "px")
-})
+    $("#twentyThree").css("top", ty2 - 20 + "px");
+    $("#twentyThree").css("left", tx2 - 20 + "px");
+    $("#ideas").css("top", ty1 - 80 + "px");
+    $("#ideas").css("left", tx1 - 110 + "px");
+
+    $("#info").teletype({
+        animDelay: 100,  // the bigger the number the slower the typing
+        text: 'And More...'
+    });
+    $("#info").on('click', function(e){
+        $("#overLay").css("top", "0px");
+    });
+    
+    $("#overLay").on('click', function(e){
+        $("#overLay").css("top", '');
+    })
+});
