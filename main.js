@@ -62,7 +62,6 @@ while(i > 5) {
     }while(distance1 < r1 || distance2 < r2);
     vertices[--i] = {x: x, y: y};
 }
-
 //console.time("triangulate");
 var triangles = triangulate(vertices);
 //console.timeEnd("triangulate");
